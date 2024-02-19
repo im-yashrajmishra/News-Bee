@@ -10,6 +10,10 @@ window.addEventListener("load", ()=>{
 async function fetchNewsData(keyword)
 {
     const result = await fetch(url+""+keyword+"&apiKey="+key);
+    if(result==null)
+    {
+        return;
+    }
     const data = await result.json();
     Object.values(data.articles).forEach((value)=>{
         displayCardData(value);
