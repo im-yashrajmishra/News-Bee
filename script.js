@@ -1,6 +1,6 @@
-const key = "c8072081079c4be1b67f729c4746b4c0";
-const url = "https://newsapi.org/v2/everything?q=";
-
+// const key = "c8072081079c4be1b67f729c4746b4c0";
+// const url = "https://newsapi.org/v2/everything?q=";
+const url = "https://api.worldnewsapi.com/search-news?api-key=fdcfcca52e0942008f3b3878e58ab2dc&text=";
 window.addEventListener("load", ()=>{
     fetchNewsData("india");
     activateHeaderLinks();
@@ -9,7 +9,8 @@ window.addEventListener("load", ()=>{
 
 async function fetchNewsData(keyword)
 {
-    const result = await fetch(url+""+keyword+"&apiKey="+key);
+    //const result = await fetch(url+""+keyword+"&apiKey="+key);
+    const result = await fetch(url+""+keyword);
     const data = await result.json();
     Object.values(data.articles).forEach((value)=>{
         displayCardData(value);
