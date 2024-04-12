@@ -11,6 +11,7 @@ async function fetchNewsData(keyword)
 {
     //const result = await fetch(url+""+keyword+"&apiKey="+key);
     const result = await fetch(url+""+keyword);
+    console.log(result);
     const data = await result.json();
     console.log(data);
     // Object.values(data.articles).forEach((value)=>{
